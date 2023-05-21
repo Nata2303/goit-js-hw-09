@@ -49,7 +49,7 @@ function addLeadingZero(value) {
 startButton.addEventListener('click', () => {
   const selectedDate = datetimePicker.selectedDates[0];
   const currentDate = new Date();
-  const countdown = selectedDate - currentDate;
+  let countdown = selectedDate - currentDate;
 
   if (countdown <= 0) {
     Notiflix.Notify.failure('Please choose a date in the future');
@@ -64,7 +64,7 @@ startButton.addEventListener('click', () => {
     timerMinutes.textContent = addLeadingZero(minutes);
     timerSeconds.textContent = addLeadingZero(seconds);
 
-    countdown -= 1000;
+    countdown -= 1000;;
 
     if (countdown <= 0) {
       clearInterval(countdownIntervalId);
